@@ -153,13 +153,13 @@ const styles = StyleSheet.create({
   },
   fontIcon: {
     color: "white",
-    marginLeft: 60,
+    marginLeft: 90,
+    marginTop:15,
   },
   touchStyle: {
     backgroundColor: "#7D74E4",
     height: "100%",
     width: "100%",
-    padding: 30,
     flex: 1,
     marginBottom: "100%",
   },
