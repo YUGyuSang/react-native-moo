@@ -3,6 +3,9 @@ import {React, useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Header, Contents, Footer } from './components/Layout';
 import  {  FontAwesomeIcon  }  from  '@fortawesome/react-native-fontawesome';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import {TemporaryPassword} from './components/ TemporaryPassword';
 
 export default function App() {
   const [defaultId, setDefaultId] = useState(1);
@@ -14,7 +17,7 @@ export default function App() {
       setDefaultId(defaultId + 1);
     };
   
-    const idMinus = () => {
+    const idMinus = () => {        
       if (defaultId === 1) {
         return setDefaultId(4);
       }
@@ -22,12 +25,19 @@ export default function App() {
     };
 
   return (
-    <View style={styles.container}>
-      <Header />
-      <Contents idPlus={idPlus} idMinus={idMinus} defaultId={defaultId}/>
-      <Footer />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="TemporaryPassword" component={TemporaryPassword} />
+      </Stack.Navigator>
+      <View style={styles.container}>
+        <Header />
+          <Contents idPlus={idPlus} idMinus={idMinus} defaultId={defaultId}/>
+        <Footer />
+      </View>
+    </NavigationContainer>
+
     
+      
   );
 };
 

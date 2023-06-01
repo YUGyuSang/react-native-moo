@@ -64,7 +64,7 @@ export const Contents = ({ idPlus, idMinus, defaultId }) => {
         </View>
         <View>
           <PublicBtn text={"비밀번호 관리"} />
-          <PublicBtn text={"임시 비밀번호"} />
+          <PublicBtn text={"임시 비밀번호"} onPress={() => navigation.navigate('TemporaryPassword')} />
         </View>
       </View>
     </View>
@@ -164,3 +164,4 @@ const styles = StyleSheet.create({
     marginBottom: "100%",
   },
 });
+ 
