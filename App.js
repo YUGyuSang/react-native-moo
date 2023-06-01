@@ -6,6 +6,7 @@ import  {  FontAwesomeIcon  }  from  '@fortawesome/react-native-fontawesome';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {TemporaryPassword} from './components/ TemporaryPassword';
+import { FeatureHeader } from "./components/FeaturePage";
 
 export default function App() {
   const [defaultId, setDefaultId] = useState(1);
@@ -39,13 +40,13 @@ export default function App() {
     
       
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
