@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, Button, StyleSheet } from 'react-native';
-import { FeatureHeader } from './FeaturePage';
+import { FeatureHeader } from '../components/FeaturePage';
 
 export const  TemporaryPassword = () => {
   return (

@@ -8,8 +8,8 @@ import { faClock } from "@fortawesome/free-solid-svg-icons/faClock";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft";
 import { faLock } from "@fortawesome/free-solid-svg-icons/faLock";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import ListBar from "./ListBar.js";
-import PublicBtn from "./ContentsBox";
+import ListBar from "../components/ListBar.js";
+import PublicBtn from "../components/ContentsBox.js";
 import { faLockOpen } from "@fortawesome/free-solid-svg-icons/faLockOpen";
 
 export const Header = () => {
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
   fontIcon: {
     color: "white",
     marginLeft: 90,
-    marginTop:15,
+    marginTop: 15,
   },
   touchStyle: {
     backgroundColor: "#7D74E4",
