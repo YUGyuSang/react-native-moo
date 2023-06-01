@@ -5,7 +5,7 @@ import { Header, Contents, Footer } from './components/Layout';
 import  {  FontAwesomeIcon  }  from  '@fortawesome/react-native-fontawesome';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {TemporaryPassword} from './components/ TemporaryPassword';
+import { TemporaryPassword } from './components/TemporaryPassword';
 import { FeatureHeader } from "./components/FeaturePage";
 
 export default function App() {
@@ -26,16 +26,19 @@ export default function App() {
     };
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="TemporaryPassword" component={TemporaryPassword} />
-      </Stack.Navigator>
-      <View style={styles.container}>
-        <Header />
-          <Contents idPlus={idPlus} idMinus={idMinus} defaultId={defaultId}/>
-        <Footer />
+      // {/* <Stack.Navigator>
+      //   <Stack.Screen name="TemporaryPassword" component={TemporaryPassword} />
+      // </Stack.Navigator>
+      // <View style={styles.container}>
+      //   <Header />
+      //     <Contents idPlus={idPlus} idMinus={idMinus} defaultId={defaultId}/>
+      //   <Footer />
+      // </View> */}
+
+      <View>
+        <TemporaryPassword/>
       </View>
-    </NavigationContainer>
+    
 
     
       
