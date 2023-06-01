@@ -3,6 +3,7 @@ import { React, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Header, Contents, Footer } from "./screens/Layout";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { TemporaryPassword } from "./components/ TemporaryPassword";
 import { FeatureHeader } from "./components/FeaturePage";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -36,12 +37,6 @@ export default function App() {
         <Stack.Screen name="UsageHistory" component={UsageHistory} />
       </Stack.Navigator>
     </NavigationContainer>
-
-    // <View style={styles.container}>
-    //   <Header />
-    //   <Contents idPlus={idPlus} idMinus={idMinus} defaultId={defaultId}/>
-    //   <Footer />
-    // </View>
   );
 }
 
