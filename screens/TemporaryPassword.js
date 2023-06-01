@@ -1,6 +1,8 @@
 import React from 'react'
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { FeatureHeader } from '../components/FeaturePage';
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faCirclePlus } from "@fortawesome/free-solid-svg-icons/faCirclePlus";
 
 export const  TemporaryPassword = () => {
   return (
@@ -11,8 +13,10 @@ export const  TemporaryPassword = () => {
             <Text style={[styles.textAline]}>PM 06:00 ~ PM 07:00</Text>
       </View>
 
-      <View>
-        
+      <View style={{ alignItems: 'center',}}>
+            <TouchableOpacity>
+              <FontAwesomeIcon icon={faCirclePlus} size={23} style={[styles.faPlus]} />
+            </TouchableOpacity>
       </View>
     </View>
   )
@@ -35,6 +39,11 @@ const styles = StyleSheet.create({
     fontSize:16,
     fontWeight:600,
     alignItems:'center'
+  },
+
+  faPlus: {
+    marginTop: 20,
+    
   }
 });
 
