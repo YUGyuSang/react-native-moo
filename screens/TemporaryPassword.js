@@ -1,21 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { FeatureHeader } from '../components/FeaturePage';
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons/faCirclePlus";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons/faCircleXmark";
 
 export const  TemporaryPassword = () => {
+  const [showContent, setShowContent] = useState(false);
+
+  const plusClick = () => {
+    setShowContent(true);
+  };
+
+  const subtractClick = () =>{
+    setShowContent(false);
+  }
+
+  
   return (
     <View>
       <FeatureHeader param={"임시 비밀번호 설정"}/>
+
+      {showContent && (
       <View style={[styles.passwordBox]}>
             <Text style={[styles.textAline]}>5시 집 청소</Text> 
             <Text style={[styles.textAline]}>PM 06:00 ~ PM 07:00</Text>
       </View>
+      )}
 
       <View style={{ alignItems: 'center',}}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={plusClick}>
               <FontAwesomeIcon icon={faCirclePlus} size={23} style={[styles.faPlus]} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={subtractClick}>
+              <FontAwesomeIcon icon={faCircleXmark} size={23} style={[styles.faPlus]}/>
             </TouchableOpacity>
       </View>
     </View>
