@@ -8,6 +8,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { UsageHistory } from "./screens/UsageHistory";
 import { TemporaryPassword } from "./screens/TemporaryPassword";
+import { TemporaryPassword1 } from "./screens/TemporaryPassword1";
 
 export default function App() {
   const [defaultId, setDefaultId] = useState(1);
@@ -32,10 +33,10 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="TemporaryPassword">
+      <Stack.Navigator initialRouteName="TemporaryPassword1">
         <Stack.Screen name="Contents" component={Contents} />
         <Stack.Screen name="UsageHistory" component={UsageHistory} />
-        <Stack.Screen name="TemporaryPassword" component={TemporaryPassword} />
+        <Stack.Screen name="TemporaryPassword1" component={TemporaryPassword1} />
       </Stack.Navigator>
     </NavigationContainer>
   );

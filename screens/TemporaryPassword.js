@@ -10,6 +10,7 @@ export const TemporaryPassword = () => {
   const [inputText, setinputText] = useState('');
   const [startTime, setstartTime] = useState('');
   const [endTime, setendTime] = useState('');
+  const [passwordBoxs,setpasswordBoxs] = useState('');
 
   const handleChangeText =(value)=>{
     setinputText(value);
@@ -25,23 +26,59 @@ export const TemporaryPassword = () => {
 
   const plusClick = () => {
 
+    const newBox =(
+      
+      <View style={[styles.setBar,{display:'flex',zIndex:2}]}>
+          <TextInput
+          style={styles.input}
+          onChangeText={handleChangeText}
+          value={inputText}
+          placeholder="제목 입력해주세요"
+          />
 
+          <TextInput 
+          style={[styles.timeInput]}
+          onChangeText={startText}
+          value={startTime}
+          placeholder="시작시간 입력해주세요"/>
 
+          <TextInput 
+          style={[styles.timeInput]}
+          onChangeText={endText}
+          value={endTime}
+          placeholder="끝나는 시간 입력해주세요"/>
 
-    const newPlus = (
-      <View style={[styles.passwordBox]}>
-        <Text style={[styles.textAline]}>{contentList.length + 1}. 5시 집 청소 </Text>
-        <Text style={[styles.textAline]}>PM 06:00 ~ PM 07:00</Text>
-      </View>
+          <TouchableOpacity style={[styles.btnInput]}>
+            <Text style={{color:'white',fontWeight:900,}}>뒤로</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.btnInput]} onPress={okClick}>
+            <Text style={{color:'white',fontWeight:900,}}>확인</Text>
+          </TouchableOpacity>
+        </View>
     );
-    // const setContent =(
-    //   <View>
-    //     <Text></Text>
+
+    // const newPlus = (
+    //   <View style={[styles.passwordBox]}>
+    //     <Text style={[styles.textAline]}>{contentList.length + 1}. 5시 집 청소 </Text>
+    //     <Text style={[styles.textAline]}>PM 06:00 ~ PM 07:00</Text>
     //   </View>
     // );
     
-    setContentList([...contentList, newPlus]);
+    setContentList([newBox]);
   };
+
+  const okClick = ()=>{
+  const passwordBox = (
+    <View style={[styles.passwordBox]}>
+         <Text style={[styles.textAline]}>hi</Text>
+         <Text style={[styles.textAline]}>PM 06:00 ~ PM 07:00</Text>
+    </View>
+  );
+
+  setContentList([passwordBox]);
+}
+
+ 
 
   const removeContent = (index) => {
     const updatedContentList = [...contentList];
@@ -65,7 +102,7 @@ export const TemporaryPassword = () => {
           </View>
         ))}
 
-        <View style={[styles.setBar]}>
+        {/* <View style={[styles.setBar]}>
           <TextInput
           style={styles.input}
           onChangeText={handleChangeText}
@@ -91,7 +128,7 @@ export const TemporaryPassword = () => {
           <TouchableOpacity style={[styles.btnInput]}>
             <Text style={{color:'white',fontWeight:900,}}>확인</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
 
       <View style={{ alignItems: 'center' }}>
           <TouchableOpacity onPress={plusClick}>
@@ -115,7 +152,7 @@ const styles = StyleSheet.create({
   },
 
   textAline: {
-    flex: 1,
+    flex:1,
     justifyContent: 'center',
     fontSize: 16,
     fontWeight: '600',
@@ -127,12 +164,15 @@ const styles = StyleSheet.create({
   },
 
   setBar:{
+    display:'none', //newBox 
     alignItems:'center',
     width:'100%',
     height:571,
     backgroundColor:'pink',
     borderTopWidth:1,
-    borderColor:'#eee'
+    borderColor:'#eee',
+    flex:1,
+    justifyContent: 'flex-end',
   },
   input: {
     height: 70,
