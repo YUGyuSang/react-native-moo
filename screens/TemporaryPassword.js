@@ -49,6 +49,8 @@ export const TemporaryPassword = () => {
     setContentList(updatedContentList);
   };
 
+  const idx = "임시 비밀번호 설정";
+
   return (
     <View>
       <FeatureHeader param={"임시 비밀번호 설정"} />
@@ -97,6 +99,13 @@ export const TemporaryPassword = () => {
           <TouchableOpacity onPress={plusClick}>
             <FontAwesomeIcon icon={faCirclePlus} size={23} style={[styles.faPlus]} />
           </TouchableOpacity>
+        </View>
+      ))}
+
+      <View style={{ alignItems: "center" }}>
+        <TouchableOpacity onPress={plusClick}>
+          <FontAwesomeIcon icon={faCirclePlus} size={23} style={[styles.faPlus]} />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -116,7 +125,7 @@ const styles = StyleSheet.create({
 
   textAline: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     fontSize: 16,
     fontWeight: '600',
     alignItems: 'center',
@@ -125,7 +134,6 @@ const styles = StyleSheet.create({
   faPlus: {
     marginTop: 20,
   },
-
   setBar:{
     alignItems:'center',
     width:'100%',
