@@ -24,6 +24,10 @@ export const TemporaryPassword = () => {
   }
 
   const plusClick = () => {
+
+
+
+
     const newPlus = (
       <View style={[styles.passwordBox]}>
         <Text style={[styles.textAline]}>{contentList.length + 1}. 5시 집 청소 </Text>
