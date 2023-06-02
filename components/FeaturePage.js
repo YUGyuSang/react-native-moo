@@ -1,6 +1,6 @@
-import { View, Text, StyleSheet } from "react-native-web";
+import { View, Text, StyleSheet } from "react-native";
 
-export const FeatureHeader = param => {
+export const FeatureHeader = (param) => {
   return (
     <View style={{ marginBottom: 20 }}>
       <Text style={styles.FeatureHeader}>{param.param}</Text>
@@ -14,6 +14,6 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     fontSize: 30,
     fontWeight: 500,
-    marginBottom:100,
+    marginBottom: 100,
   },
 });
