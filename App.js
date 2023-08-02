@@ -26,13 +26,11 @@ export default function App() {
     setDefaultId(defaultId - 1);
   };
 
-  // 화면전환 참고자료
-  // https://velog.io/@su96in43/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8Creact-native-%ED%99%94%EB%A9%B4-%EC%9D%B4%EB%8F%99
   const Stack = createStackNavigator();
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Contents">
+      <Stack.Navigator initialRouteName="UsageHistory">
         <Stack.Screen name="Contents" component={Contents} />
         <Stack.Screen name="UsageHistory" component={UsageHistory} />
       </Stack.Navigator>
